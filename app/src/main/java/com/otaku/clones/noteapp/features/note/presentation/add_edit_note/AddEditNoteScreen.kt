@@ -84,12 +84,12 @@ fun AddEditNoteScreen(
             }
         },
         scaffoldState = scaffoldState,
+        backgroundColor = notedBackgroundAnimatable.value
     ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
-                .background(notedBackgroundAnimatable.value)
+                .padding(16.dp)
         ) {
             LazyRow(
                 modifier = Modifier.fillMaxWidth(),
@@ -100,7 +100,7 @@ fun AddEditNoteScreen(
                     Box(
                         modifier = Modifier
                             .size(50.dp, 50.dp)
-//                            .shadow(50.dp, CircleShape)
+                            .shadow(4.dp, CircleShape)
                             .clip(CircleShape)
                             .background(color)
                             .border(
@@ -166,7 +166,7 @@ fun AddEditNoteScreen(
                 },
                 textStyle = MaterialTheme.typography.body1,
                 singleLine = false,
-            modifier = Modifier.fillMaxHeight(),
+                modifier = Modifier.fillMaxHeight(),
             )
         }
     }

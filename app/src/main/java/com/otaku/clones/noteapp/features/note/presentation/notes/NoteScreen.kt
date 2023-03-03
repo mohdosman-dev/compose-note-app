@@ -19,7 +19,6 @@ import androidx.navigation.NavController
 import com.otaku.clones.noteapp.features.note.presentation.notes.components.NoteCard
 import com.otaku.clones.noteapp.features.note.presentation.notes.components.OrderSection
 import com.otaku.clones.noteapp.features.note.presentation.utils.AppRoutes
-//import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.launch
 
 @Composable
@@ -54,7 +53,7 @@ fun NoteScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                .padding(16.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -106,7 +105,13 @@ fun NoteScreen(
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable() {}
+                            .clickable() {
+                                navController.navigate(
+                                    AppRoutes.AddEditNoteApp.route +
+                                            "?note_id=${note.id}&note_color=${note.color}"
+                                )
+                            }
+                            .padding(bottom = 16.dp)
                     )
                 }
             }

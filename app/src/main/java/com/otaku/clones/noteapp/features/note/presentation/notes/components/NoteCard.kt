@@ -63,7 +63,7 @@ fun NoteCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
-                .padding(end = 32.dp)
+                .padding(end = 16.dp)
         ) {
             Text(
                 text = note.title,
@@ -80,6 +80,7 @@ fun NoteCard(
                 overflow = TextOverflow.Ellipsis,
                 color = MaterialTheme.colors.onSurface,
             )
+
         }
         IconButton(
             onClick = onDeleteNote,
@@ -97,9 +98,8 @@ fun NoteCard(
 @Composable
 private fun PreviewNoteCard() {
     NoteCard(
-        modifier = Modifier.size(20.dp, 20.dp),
         note = Note(
-            title = "Title",
+            title = "Title here",
             content = "Content",
             color = 1,
             timestamp = Date().time,
